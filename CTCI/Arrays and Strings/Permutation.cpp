@@ -1,10 +1,13 @@
 //===================Program Checks if the two strings are permutations of each other 
 
 #include <bits/stdc++.h>
-#include <string.h>
 using namespace std;
 
-//===================First Method one sorting and comparing  ==========================//
+
+
+//First Method one sorting and comparing  
+
+
 
 bool arePermutation(string str1,string str2){
 string s1(str1);
@@ -22,7 +25,11 @@ else{
 }
 }
 
-//===================Second Method Implementation method Suggested by the BOOK i.e by Character Count =====//
+
+
+//Second Method Implementation method Suggested by the BOOK i.e by Character Count
+
+
 bool arePermutation2(string str1,string str2){
 int count[128] = {0} ;
 if(str1.length() != str2.length()){
