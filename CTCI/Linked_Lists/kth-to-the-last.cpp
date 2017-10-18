@@ -1,6 +1,4 @@
-//Program to Remove Duplicates 
-
-
+//Getting the k th element from the Last
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -38,24 +36,27 @@ void print_list(struct node  *root) {
 	cout << "\n";
 }
 
-int k_th_to_last(struct node *root,int k){
-struct node *p = root;
-struct node *q = p+k;
-cout<<p->data<<"->"<<q->data<<"\n";
-return 0;
+void k_th_to_last(struct node *root, int k) {
+	static int count = 0;
+	if (root == NULL) {
+		return ;
+	}
+	else {
+		k_th_to_last(root->next, k);
+		count++;
+		if (count == k) {
+			cout << root->data << "\n";
+		}
+
+	}
 }
-
-
-
-
-
-
 
 
 int main(int argc, char const *argv[])
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
+	//Creating the Root Element
 	struct node *newroot = create_List_util(NULL, 5);
 	create_List_util(newroot, 6);
 	create_List_util(newroot, 11);
@@ -63,9 +64,6 @@ int main(int argc, char const *argv[])
 	create_List_util(newroot, 9);
 	create_List_util(newroot, 11);
 	create_List_util(newroot, 11);
-
-	print_list(newroot);
-	cout<<k_th_to_last(newroot,5)<<"\n";
-
-
+	//getting the K th Element from the Last
+	k_th_to_last(newroot, 7);
 }
